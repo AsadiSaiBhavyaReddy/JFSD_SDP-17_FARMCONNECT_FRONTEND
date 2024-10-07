@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LearnFarm - Shop</title>
+    <style>
+        /* Your existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .cart-container {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        .cart-container img {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 52px;
+        }
+
+        body {
+            margin-top: 140px;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            margin-top: -1px;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 20px 30px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .search-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .search-container input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: darkgreen;
+        }
+
+        .main-container {
+            display: flex;
+        }
+
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 20px;
+            width: 250px;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .filter-group input[type="range"] {
+            width: 100%;
+        }
+
+        .filter-group input[type="range"] + output {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .shop-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            width: calc(100% - 250px);
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 250px;
+            margin: 15px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 220px;
+            height: 150px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .card button:hover {
+            background-color: darkgreen;
+        }
+
+        .card button:nth-child(2) {
+            background-color: #2196F3;
+        }
+
+        .card button:nth-child(2):hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cart Icon above the header -->
+<div class="cart-container">
+    <a href="cart.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart">
+    </a>
+</div>
+
+<header>
+    <h1>FarmConnect</h1>
+</header>
+
+<nav>
+    
+    <a href="home.html">Home</a>
+  <a href="Shop.html">Shop</a>
+  <a href="Showfarmer.html">Shop Farmer</a>
+  <a href="Review.html">Review the Products</a>
+  <a href="schem.html">Schemes</a>
+  </nav>
+
+<!-- Search Bar -->
+<div class="search-container">
+    <input type="text" placeholder="Search for products..." id="search-input">
+    <button onclick="searchProduct()">Search</button>
+</div>
+
+<div class="main-container">
+    <!-- Sidebar with Filters -->
+    <div class="sidebar">
+        <h3>Filter by Price</h3>
+        <div class="filter-group">
+            <label for="price-range">Price Range: 10 - 100</label>
+            <input type="range" id="price-range" min="10" max="100" value="50" oninput="this.nextElementSibling.value = this.value">
+            <output>50</output>
+        </div>
+    </div>
+
+    <!-- Shop Products -->
+    <div class="shop-container" id="shop-container">
+        <div class="card" data-name="Carrot" data-price="60">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/025/435/403/small_2x/carrot-vegetable-with-leaves-isolated-on-white-background-cutout-generate-ai-free-photo.jpg" alt="Carrot">
+            <h3>Carrot</h3>
+            <p>Price: 60/-</p>
+            <button onclick="addToCart('Carrot', 60)">Add to Cart</button>
+            <button onclick="viewDetails('Carrot')">View Details</button>
+        </div>
+        <div class="card" data-name="Green Pepper" data-price="60">
+            <img src="https://cdn.pixabay.com/photo/2020/06/15/12/25/green-paper-5301656_1280.jpg" alt="Green Pepper">
+            <h3>Green Pepper</h3>
+            <p>Price: 60/-</p>
+            <button onclick="addToCart('Green Pepper', 60)">Add to Cart</button>
+            <button onclick="viewDetails('Green Pepper')">View Details</button>
+        </div>
+        <div class="card" data-name="Cauliflower" data-price="50">
+            <img src="https://www.urbankisan.co.in/wp-content/uploads/2023/06/istockphoto-90634594-612x612-1.jpeg" alt="Cauliflower">
+            <h3>Cauliflower</h3>
+            <p>Price: 50/-</p>
+            <button onclick="addToCart('Cauliflower', 50)">Add to Cart</button>
+            <button onclick="viewDetails('Cauliflower')">View Details</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnXZK_TzE6ijSNBhfTVJYxZcQOK6hlquQgcHqnHGAB7iDOMTN27WotwFKUfbNd91tVZ_Y&usqp=CAU" alt="Cauliflower">
+            <h3>Ladies Finger </h3>
+            <p>Price: 40/-</p>
+            <button onclick="addToCart('Ladies Finger')">Add to Cart</button>
+            <button onclick="viewDetails('Ladies Finger')">View Details</button>
+        </div>
+    
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1208631571/photo/fresh-ripe-tomatoes-packaged-in-carton-box-on-street-market-or-greengrocery.jpg?s=612x612&w=0&k=20&c=jk1nsRiNtVn3YBvrymMKKW4vLSsTrSMQK_XR-ULBops=" alt="Cauliflower">
+            <h3>Tomatoes </h3>
+            <p>Price: 50/-</p>
+            <button onclick="addToCart('Tomatoes')">Add to Cart</button>
+            <button onclick="viewDetails('Tomatoes')">View Details</button>
+        </div>
+    
+        <div class="card">
+            <img src="https://5.imimg.com/data5/UE/EV/MY-11629088/vegetable-green-peas-250x250.jpg" alt="Cauliflower">
+            <h3> Green Peas </h3>
+            <p>Price: 30/-</p>
+            <button onclick="addToCart('Green Peas')">Add to Cart</button>
+            <button onclick="viewDetails('Green Peas')">View Details</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Add product to cart and store in localStorage
+    function addToCart(productName, productPrice) {
+        var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        cartItems.push({name: productName, price: productPrice});
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(productName + ' has been added to the cart!');
+    }
+
+    // Search functionality (optional, based on your needs)
+    function searchProduct() {
+        var input = document.getElementById('search-input').value.toLowerCase();
+        var products = document.querySelectorAll('.card');
+        products.forEach(function(product) {
+            var productName = product.dataset.name.toLowerCase();
+            if (productName.includes(input)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

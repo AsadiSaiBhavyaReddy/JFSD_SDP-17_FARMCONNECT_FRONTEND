@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styling */
+        header {
+            background-color: green; /* Green background for header */
+            color: white;
+            padding: 20px 50px; /* Increased padding for more height */
+            text-align: center;
+            font-size: 33px; /* Increased font size */
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 220px; /* Increased width for better aesthetics */
+            background-color: #f8f8f8; /* Light background for sidebar */
+            height: 100vh; /* Full height of the viewport */
+            position: fixed; /* Fixed position on the left */
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Sidebar links styling */
+        .sidebar a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333; /* Dark color for text */
+            display: block; /* Make links block elements */
+            transition: background 0.3s, box-shadow 0.3s; /* Smooth background and shadow transition */
+            margin: 5px 0; /* Add margin between links */
+            border-radius: 4px; /* Rounded corners for links */
+        }
+
+        /* Change background and add shadow on hover */
+        .sidebar a:hover {
+            background-color: #ddd; /* Light gray on hover */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+        }
+
+        /* Section line styling */
+        .sidebar a:not(:last-child) {
+            border-bottom: 1px solid #ccc; /* Add line between links */
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-left: 240px; /* Leave space for sidebar */
+            padding: 20px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: green;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Form styling */
+        .form-container {
+            margin-top: 40px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 10px;
+        }
+
+        .form-container input, .form-container select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-container button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        Farmer Dashboard
+    </header>
+
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <a href="viewusers.html">View Users</a>
+        <a href="viewexpert.html">View Experts</a>
+        <a href="viewfarmers.html">View Farmers</a>
+        <a href="addexpert.html">Add Experts</a>
+        <a href="addproducts.html">Add Product</a>
+        <a href="viewproducts.html">View Products</a>
+        <a href="updateproducts.html">Update Products</a>
+        <a href="deleteproducts.html">Delete Products</a>
+        <a href="updateexpert.html">Update Experts</a>
+        <a href="deleteexpert.html">Delete Experts</a>
+        <a href="deleteuser.html">Delete Users</a>
+        <a href="addfarmer.html">Add Farmers</a>
+        <a href="updatefarmer.html">Update Farmers</a>
+        <a href="deletefarmer.html">Delete Farmers</a>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Farmers' Products Section -->
+        <div class="farmers-products">
+            <h2>Farmers and Their Products</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Farmer Name</th>
+                        <th>Phone Number</th>
+                        <th>Type of Crop Products</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Expert ID</th>
+                        <th>Expert Name</th>
+                        <th>Expert Email</th>
+                        <th>Expert Phone</th>
+                        <th>Expert Education</th>
+                        <th>Expert Expertise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Farmer A</td>
+                        <td>123-456-7890</td>
+                        <td>Vegetables</td>
+                        <td>$20</td>
+                        <td><img src="https://static.vecteezy.com/system/resources/thumbnails/025/435/403/small_2x/carrot-vegetable-with-leaves-isolated-on-white-background-cutout-generate-ai-free-photo.jpg" alt="Farmer A" width="50"></td>
+                        <td>101</td>
+                        <td>Expert A</td>
+                        <td>experta@example.com</td>
+                        <td>321-654-0987</td>
+                        <td>BSc Agriculture</td>
+                        <td>Crop Management</td>
+                    </tr>
+                    <tr>
+                        <td>Farmer B</td>
+                        <td>098-765-4321</td>
+                        <td>Fruits</td>
+                        <td>$30</td>
+                        <td><img src="https://cdn.pixabay.com/photo/2020/06/15/12/25/green-paper-5301656_1280.jpg" alt="Farmer B" width="50"></td>
+                        <td>102</td>
+                        <td>Expert B</td>
+                        <td>expertb@example.com</td>
+                        <td>456-789-1234</td>
+                        <td>MSc Horticulture</td>
+                        <td>Fruit Production</td>
+                    </tr>
+                    <tr>
+                        <td>Farmer C</td>
+                        <td>567-890-1234</td>
+                        <td>Cereals</td>
+                        <td>$15</td>
+                        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnXZK_TzE6ijSNBhfTVJYxZcQOK6hlquQgcHqnHGAB7iDOMTN27WotwFKUfbNd91tVZ_Y&usqp=CAU" alt="Farmer C" width="50"></td>
+                        <td>103</td>
+                        <td>Expert C</td>
+                        <td>expertc@example.com</td>
+                        <td>987-654-3210</td>
+                        <td>BSc Agronomy</td>
+                        <td>Cereal Cultivation</td>
+                    </tr>
+                    <tr>
+                        <td>Farmer D</td>
+                        <td>234-567-8901</td>
+                        <td>Legumes</td>
+                        <td>$25</td>
+                        <td><img src="https://media.istockphoto.com/id/1208631571/photo/fresh-ripe-tomatoes-packaged-in-carton-box-on-street-market-or-greengrocery.jpg?s=612x612&w=0&k=20&c=jk1nsRiNtVn3YBvrymMKKW4vLSsTrSMQK_XR-ULBops=" alt="Farmer D" width="50"></td>
+                        <td>104</td>
+                        <td>Expert D</td>
+                        <td>expertd@example.com</td>
+                        <td>654-321-0987</td>
+                        <td>MSc Plant Science</td>
+                        <td>Legume Production</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Add Farmer Form Section -->
+        <div class="form-container">
+         
+        </div>
+    </div>
+
+</body>
+</html>

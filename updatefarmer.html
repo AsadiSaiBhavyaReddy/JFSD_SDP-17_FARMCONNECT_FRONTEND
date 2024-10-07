@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styling */
+        header {
+            background-color: green; /* Green background for header */
+            color: white;
+            padding: 20px 50px; /* Increased padding for more height */
+            text-align: center;
+            font-size: 33px; /* Increased font size */
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 220px; /* Increased width for better aesthetics */
+            background-color: #f8f8f8; /* Light background for sidebar */
+            height: 100vh; /* Full height of the viewport */
+            position: fixed; /* Fixed position on the left */
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Sidebar links styling */
+        .sidebar a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333; /* Dark color for text */
+            display: block; /* Make links block elements */
+            transition: background 0.3s, box-shadow 0.3s; /* Smooth background and shadow transition */
+            margin: 5px 0; /* Add margin between links */
+            border-radius: 4px; /* Rounded corners for links */
+        }
+
+        /* Change background and add shadow on hover */
+        .sidebar a:hover {
+            background-color: #ddd; /* Light gray on hover */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+        }
+
+        /* Section line styling */
+        .sidebar a:not(:last-child) {
+            border-bottom: 1px solid #ccc; /* Add line between links */
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-left: 240px; /* Leave space for sidebar */
+            padding: 20px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: green;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Form styling */
+        .form-container {
+            margin-top: 40px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 10px;
+        }
+
+        .form-container input, .form-container select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-container button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        Farmer Dashboard
+    </header>
+
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <a href="viewusers.html">View Users</a>
+        <a href="viewexpert.html">View Experts</a>
+        <a href="viewfarmers.html">View Farmers</a>
+        <a href="addexpert.html">Add Experts</a>
+        <a href="addproducts.html">Add Product</a>
+        <a href="viewproducts.html">View Products</a>
+        <a href="updateproducts.html">Update Products</a>
+        <a href="deleteproducts.html">Delete Products</a>
+        <a href="updateexpert.html">Update Experts</a>
+        <a href="deleteexpert.html">Delete Experts</a>
+        <a href="deleteuser.html">Delete Users</a>
+        <a href="addfarmer.html">Add Farmers</a>
+        <a href="updatefarmer.html">Update Farmers</a>
+        <a href="deletefarmer.html">Delete Farmers</a>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Farmers' Products Section -->
+        <div class="farmers-products">
+            
+        </div>
+
+        <!-- Add Farmer Form Section -->
+        <div class="form-container">
+            <h2>Update a New Farmer</h2>
+            <form id="add-farmer-form">
+                <input type="text" id="farmer-name" placeholder="Farmer Name" required>
+                <input type="text" id="phone-number" placeholder="Phone Number" required>
+                <input type="text" id="crop-type" placeholder="Type of Crop Products" required>
+                <input type="text" id="price" placeholder="Price" required>
+                <input type="file" id="image" accept="image/*" required>
+                <input type="text" id="expert-contact" placeholder="Expert Contact" required>
+                <button type="submit">Update Farmer</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

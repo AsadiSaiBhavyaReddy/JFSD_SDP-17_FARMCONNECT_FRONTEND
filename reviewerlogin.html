@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Management</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styling */
+        header {
+            background-color: green; /* Green background for header */
+            color: white;
+            padding: 20px 50px; /* Increased padding for more height */
+            text-align: center;
+            font-size: 33px; /* Increased font size */
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 220px; /* Increased width for better aesthetics */
+            background-color: #f8f8f8; /* Light background for sidebar */
+            height: 100vh; /* Full height of the viewport */
+            position: fixed; /* Fixed position on the left */
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Sidebar links styling */
+        .sidebar a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333; /* Dark color for text */
+            display: block; /* Make links block elements */
+            transition: background 0.3s, box-shadow 0.3s; /* Smooth background and shadow transition */
+            margin: 5px 0; /* Add margin between links */
+            border-radius: 4px; /* Rounded corners for links */
+        }
+
+        /* Change background and add shadow on hover */
+        .sidebar a:hover {
+            background-color: #ddd; /* Light gray on hover */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+        }
+
+        /* Section line styling */
+        .sidebar a:not(:last-child) {
+            border-bottom: 1px solid #ccc; /* Add line between links */
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-left: 240px; /* Leave space for sidebar */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        Agriculture Expert Management System
+    </header>
+
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <a href="viewusers1.html">View Farmers</a>
+        <a href="addsug.html">View Suggestions</a>
+        <a href="viewqueries.html">View Queries</a>
+        <a href="addproduct.html">Add Products</a>
+        <a href="viewproduct1.html">View Products</a>
+        <a href="updateproducts1.html">Update Products</a>
+        <a href="deleteproduct1.html">Delete Products</a>
+        <a href="addfarmers1.html">Add Farmers</a>
+        <a href="updatefarmer1.html">Update Farmers</a>
+        <a href="deletefarmer1.html">Delete Farmers</a>
+        
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h2>Welcome to the Agricultural Expert Management System</h2>
+        <p>Select an option from the sidebar to manage users and reviews.</p>
+    </div>
+
+</body>
+</html>

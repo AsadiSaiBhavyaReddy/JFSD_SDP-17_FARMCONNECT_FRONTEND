@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 52px;
+        }
+
+        body {
+            margin-top: 140px;
+        }
+
+        .cart-container {
+            padding: 20px;
+        }
+
+        .cart-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-item p {
+            margin: 0;
+        }
+
+        .remove-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-button:hover {
+            background-color: darkred;
+        }
+
+        .total {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Shopping Cart</h1>
+</header>
+
+<div class="cart-container" id="cart-container">
+    <!-- Cart items will be populated here -->
+</div>
+
+<button class="back-button" onclick="goBack()">Back to Shop</button>
+
+<script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.getElementById('cart-container');
+
+    function updateCart() {
+        cartContainer.innerHTML = ''; // Clear the cart container
+        let totalPrice = 0;
+
+        cart.forEach((item, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('cart-item');
+            itemDiv.innerHTML = `
+                <p>${item.name} - Price: ${item.price}</p>
+                <button class="remove-button" onclick="removeFromCart(${index})">Remove</button>
+            `;
+            cartContainer.appendChild(itemDiv);
+            totalPrice += item.price; // Calculate total price
+        });
+
+        const totalDiv = document.createElement('div');
+        totalDiv.classList.add('total');
+        totalDiv.innerHTML = `Total Price: ${totalPrice}`;
+        cartContainer.appendChild(totalDiv);
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1); // Remove item from cart
+        localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
+        updateCart(); // Refresh cart display
+    }
+
+    function goBack() {
+        window.location.href = 'Showfarmer.html'; // Redirect to shopfarmer.html
+    }
+
+    updateCart(); // Initial call to display cart items
+</script>
+</body>
+</html>

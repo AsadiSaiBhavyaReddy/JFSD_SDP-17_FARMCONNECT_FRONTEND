@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Farmers and Their Farms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header and Navigation Styling */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0; /* Increased padding for larger header */
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 52px; /* Increased font size for header */
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 20px 30px; /* Increased padding for larger navigation links */
+            font-size: 24px; /* Increased font size for navigation */
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Schemes Section Styling */
+        .schemes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .scheme-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            width: 250px; /* Fixed width for scheme cards */
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .scheme-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .scheme-card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .learn-more {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .learn-more:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>FarmConnect</h1>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+  <a href="Shop.html">Shop</a>
+  <a href="Showfarmer.html">Shop Farmer</a>
+  <a href="Review.html">Review the Products</a>
+  <a href="schem.html">Schemes</a>
+</nav>
+
+<!-- Schemes for Farmers Section -->
+<h2>Schemes for Farmers</h2>
+<div class="schemes-container">
+
+    <div class="scheme-card">
+        <h3>Scheme 1</h3>
+        <p>Learn about government grants for farmers to enhance their agricultural productivity.</p>
+        <button class="learn-more" onclick="window.location.href='scheme1.html'">Learn More</button>
+    </div>
+
+    <div class="scheme-card">
+        <h3>Scheme 2</h3>
+        <p>Subsidies for organic farming to promote sustainable practices.</p>
+        <button class="learn-more" onclick="window.location.href='scheme2.html'">Learn More</button>
+    </div>
+
+    <div class="scheme-card">
+        <h3>Scheme 3</h3>
+        <p>Training programs for modern agricultural techniques and technologies.</p>
+        <button class="learn-more" onclick="window.location.href='scheme3.html'">Learn More</button>
+    </div>
+
+    <div class="scheme-card">
+        <h3>Scheme 4</h3>
+        <p>Loan facilities for purchasing farming equipment and resources.</p>
+        <button class="learn-more" onclick="window.location.href='scheme4.html'">Learn More</button>
+    </div>
+
+</div>
+
+</body>
+</html>

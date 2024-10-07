@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styling */
+        header {
+            background-color: green; /* Green background for header */
+            color: white;
+            padding: 20px 50px; /* Increased padding for more height */
+            text-align: center;
+            font-size: 33px; /* Increased font size */
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 220px; /* Increased width for better aesthetics */
+            background-color: #f8f8f8; /* Light background for sidebar */
+            height: 100vh; /* Full height of the viewport */
+            position: fixed; /* Fixed position on the left */
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Sidebar links styling */
+        .sidebar a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333; /* Dark color for text */
+            display: block; /* Make links block elements */
+            transition: background 0.3s, box-shadow 0.3s; /* Smooth background and shadow transition */
+            margin: 5px 0; /* Add margin between links */
+            border-radius: 4px; /* Rounded corners for links */
+        }
+
+        /* Change background and add shadow on hover */
+        .sidebar a:hover {
+            background-color: #ddd; /* Light gray on hover */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+        }
+
+        /* Section line styling */
+        .sidebar a:not(:last-child) {
+            border-bottom: 1px solid #ccc; /* Add line between links */
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-left: 240px; /* Leave space for sidebar */
+            padding: 20px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: green;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Soil Information Section */
+        .soil-info {
+            margin-top: 40px;
+        }
+
+        .soil-info h2 {
+            margin-bottom: 10px;
+        }
+
+        .soil-info table {
+            margin: 10px 0;
+        }
+
+        /* Farmers' Products Section */
+        .farmers-products {
+            margin-top: 40px;
+        }
+
+        .farmers-products h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        Farmer Dashboard
+    </header>
+
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <a href="viewusers.html">View Users</a>
+        <a href="viewexpert.html">View Experts</a>
+        <a href="viewfarmers.html">View Farmers</a>
+        <a href="addexpert.html">Add Experts</a>
+        <a href="addproducts.html">Add Product</a>
+        <a href="viewproducts.html">View Products</a>
+        <a href="updateproducts.html">Update Products</a>
+        <a href="deleteproducts.html">Delete Products</a>
+        <a href="updateexpert.html">Update Experts</a>
+        <a href="deleteexpert.html">Delete Experts</a>
+        <a href="deleteuser.html">Delete Users</a>
+        <a href="addfarmer.html">Add Farmers</a>
+        <a href="updatefarmer.html">Update Farmers</a>
+        <a href="deletefarmer.html">Delete Farmers</a>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Soil Information Section -->
+        <div class="soil-info">
+            <h2>Soil Types and Crop Yield</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Soil Type</th>
+                        <th>Crops Grown</th>
+                        <th>Yield Timing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sandy Soil</td>
+                        <td>Carrots, Potatoes, Onions</td>
+                        <td>70-120 days</td>
+                    </tr>
+                    <tr>
+                        <td>Clay Soil</td>
+                        <td>Beans, Broccoli, Cabbage</td>
+                        <td>90-150 days</td>
+                    </tr>
+                    <tr>
+                        <td>Silty Soil</td>
+                        <td>Corn, Cabbage, Spinach</td>
+                        <td>60-120 days</td>
+                    </tr>
+                    <tr>
+                        <td>Loamy Soil</td>
+                        <td>Tomatoes, Peppers, Wheat</td>
+                        <td>70-130 days</td>
+                    </tr>
+                    <tr>
+                        <td>Peaty Soil</td>
+                        <td>Potatoes, Berries</td>
+                        <td>70-140 days</td>
+                    </tr>
+                    <tr>
+                        <td>Saline Soil</td>
+                        <td>Salt-tolerant varieties</td>
+                        <td>Varies significantly</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Farmers' Products Section -->
+        <div class="farmers-products">
+            <h2>Farmers and Their Products</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Farmer Name</th>
+                        <th>Phone Number</th>
+                        <th>Type of Crop Products</th>
+                        <th>Number of Sales</th>
+                        <th>Suggested Agricultural Expert Contact</th>
+                        <th>Yield Timing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Farmer A</td>
+                        <td>123-456-7890</td>
+                        <td>Vegetables</td>
+                        <td>150</td>
+                        <td>Expert A - 321-654-0987</td>
+                        <td>70-120 days</td>
+                    </tr>
+                    <tr>
+                        <td>Farmer B</td>
+                        <td>098-765-4321</td>
+                        <td>Fruits</td>
+                        <td>200</td>
+                        <td>Expert B - 456-789-1234</td>
+                        <td>90-150 days</td>
+                    </tr>
+                    <tr>
+                        <td>Farmer C</td>
+                        <td>567-890-1234</td>
+                        <td>Cereals</td>
+                        <td>300</td>
+                        <td>Expert C - 987-654-3210</td>
+                        <td>100-180 days</td>
+                    </tr>
+                    <tr>
+                        <td>Farmer D</td>
+                        <td>234-567-8901</td>
+                        <td>Legumes</td>
+                        <td>250</td>
+                        <td>Expert D - 654-321-0987</td>
+                        <td>90-160 days</td>
+                    </tr>
+                    <!-- Add more farmer product rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

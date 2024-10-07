@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Management Application</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Header and Navigation Styling */
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 0; /* Increased padding for larger header */
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 48px; /* Increased font size for header */
+    }
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 20px 30px; /* Increased padding for larger navigation links */
+      font-size: 20px; /* Increased font size for navigation */
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .home-container {
+      font-family: Arial, sans-serif;
+    }
+    .about-us-box {
+      background-color: rgb(128, 153, 5);
+      color: white;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .slider-image-container {
+      width: 90%;
+      height: 550px;
+    }
+    
+    /* Flip Card Styling */
+    .flip-card-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .flip-card {
+      position: relative;
+      width: 300px; /* Set width */
+      height: 350px; /* Set height */
+      perspective: 1000px; /* Enable 3D perspective */
+    }
+
+    .flip-card-inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s; /* Animation for the flip */
+      transform-style: preserve-3d; /* Preserve 3D space */
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg); /* Rotate on flip */
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden; /* Hide back side when flipped */
+    }
+
+    .flip-card-back {
+      background-color: rgb(77, 153, 5); /* Background for the back */
+      color: white; /* Text color for the back */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Align text in column */
+      padding: 10px;
+      transform: rotateY(180deg); /* Hide back side initially */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Combined Header from "Shop" and "Farmers" -->
+<header>
+  <h1>FarmConnect</h1>
+</header>
+
+<nav>
+  <a href="home.html">Home</a>
+  <a href="Shop.html">Shop</a>
+  <a href="Showfarmer.html">Shop Farmer</a>
+  <a href="Review.html">Review the Products</a>
+  <a href="schem.html">Schemes</a>
+</nav>
+
+
+<!-- Home Page Content -->
+<div class="home-container">
+  <h1>Welcome to Farmer Management Application</h1>
+
+  <!-- Slideshow Section -->
+  <div class="slider">
+    <div class="slider-image-container">
+      <img src="https://media.licdn.com/dms/image/D5612AQHA6evGITQQPw/article-cover_image-shrink_600_2000/0/1663142293849?e=2147483647&v=beta&t=F1xXy4t6hKwCq0tdipcSh0skZrGdvc4vjv-YZlxlPbo" alt="Slide 1" style="width: 100%; height: 100%;">
+    </div>
+    <div class="slider-image-container">
+      <img src="https://media.istockphoto.com/id/503646746/photo/farmer-spreading-fertilizer-in-the-field-wheat.jpg?s=612x612&w=0&k=20&c=Lgxsjbz0jaYyQrvfzhyAsW2zELtshRP4AtLzkpmcLiE=" alt="Slide 2" style="width: 100%; height: 100%;">
+    </div>
+    <div class="slider-image-container">
+      <img src="https://cdn.pixabay.com/photo/2020/07/23/01/09/field-5430070_640.jpg" alt="Slide 3" style="width: 100%; height: 100%;">
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="about-us-box">
+    <h2>About Us</h2>
+    <p>
+      The objective of this project is to create a platform that offers farmers resources and help them while also increasing public awareness of the value of farming. The platform will link farmers with different sectors, including as agricultural professionals, the public, and sector-specific services, providing them with opportunities and vital information to improve their lives.
+    </p>
+  </div>
+
+  <!-- Flip Card Section -->
+  <div class="flip-card-container">
+    <!-- First Card -->
+    <div class="flip-card" style="cursor: pointer;">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://th-i.thgim.com/public/sci-tech/agriculture/87sx5z/article30131510.ece/alternates/LANDSCAPE_1200/NEWS2FARMER" alt="Cars" style="width: 100%; height: 100%;">
+        </div>
+        <div class="flip-card-back">
+          <h3>Farmers</h3>
+          <p>In an age where technology intersects with agriculture, we are thrilled to announce our latest project aimed at bridging the gap between farmers, agricultural experts, and the public. Our platform is designed to provide farmers with vital resources and information, while simultaneously enhancing public awareness of the invaluable role of farming in our society.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Card -->
+    <div class="flip-card" style="cursor: pointer;">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://knect365.imgix.net/uploads/09efcf09-dd86-4e6e-ba26-1ceacdc64bdb-featured-4e5ba6013124e2a3a2f4492ff1b5d68f.jpg?auto=format&fit=max&w=412&dpr=5" alt="Bikes" style="width: 100%; height: 100%;">
+        </div>
+        <div class="flip-card-back">
+          <h3>Agricultural Expert</h3>
+          <p>Provide guidance and advice to farmers through articles, videos, and webinars
+            Create educational content for farmers and the general public
+            Answer farmer queries and address their challenges</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Card -->
+    <div class="flip-card" style="cursor: pointer;">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://media.istockphoto.com/id/163067728/photo/happy-woman-working.jpg?s=612x612&w=0&k=20&c=RlBDxZXWs4T0fq8963dJP_1h8FUpH0vFT-JVZn9cjRk=" alt="Car & Bike Products" style="width: 100%; height: 100%;">
+        </div>
+        <div class="flip-card-back">
+          <h3>Users and Farmers</h3>
+          <p>Browse farming content and explore discussions
+            Learn about agricultural practices and modern farming technologies
+            Engage in open forums and discussions about farming issues</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+  // Initialize the slider
+  $(document).ready(function(){
+    $('.slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 900,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000
+    });
+
+    // Handle flip card click event
+    $('.flip-card').on('click', function() {
+      $(this).toggleClass('flipped');
+    });
+  });
+</script>
+
+</body>
+</html>

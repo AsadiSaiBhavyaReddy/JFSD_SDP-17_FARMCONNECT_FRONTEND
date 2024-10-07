@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Farmers and Their Farms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header and Navigation Styling */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0; /* Increased padding for larger header */
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 52px; /* Increased font size for header */
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 20px 30px; /* Increased padding for larger navigation links */
+            font-size: 24px; /* Increased font size for navigation */
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Farmer Cards Styling */
+        .farmers-container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            align-items: center;
+        }
+        .farmer-card {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            align-items: center;
+        }
+        .farmer-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .farmer-description {
+            flex: 1;
+        }
+        .farmer-description h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .farmer-description p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Shop Now Button Styling */
+        .shop-now {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .shop-now:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>FarmConnect</h1>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="Shop.html">Shop</a>
+    <a href="Showfarmer.html">Shop Farmer</a>
+    <a href="Review.html">Review the Products</a>
+  </nav>
+
+<div class="farmers-container">
+
+    <!-- Farmer 1 -->
+    <div class="farmer-card">
+        <img src="https://i.pinimg.com/564x/cc/b4/3d/ccb43d88f362d1ab22f3ade7004e514f.jpg" alt="Farmer 1">
+        <div class="farmer-description">
+            <h3>John Doe - Organic Farming</h3>
+            <p>John has been practicing organic farming for over 20 years. His farm produces fresh vegetables, organic grains, and fruits that are free of pesticides and harmful chemicals. Visit the shop to explore his high-quality products.</p>
+            <button class="shop-now" onclick="window.location.href='Shop.html'">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Farmer 2 -->
+    <div class="farmer-card">
+        <img src="https://www.kindpng.com/picc/m/298-2983638_indian-farmer-png-indian-farmer-cartoon-png-transparent.png" alt="Farmer 2">
+        <div class="farmer-description">
+            <h3>Mary Smith - Dairy and Livestock</h3>
+            <p>Mary runs a family-owned dairy farm that provides fresh milk, cheese, and other dairy products. She also specializes in organic poultry and livestock, offering the best quality meat and eggs.</p>
+            <button class="shop-now" onclick="window.location.href='Shop.html'">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Farmer 3 -->
+    <div class="farmer-card">
+        <img src="https://png.pngtree.com/png-clipart/20210925/ourlarge/pngtree-cartoon-characters-of-indian-farmers-png-image_3951915.png" alt="Farmer 3">
+        <div class="farmer-description">
+            <h3>Robert Brown - Fruit Orchards</h3>
+            <p>Robert is passionate about sustainable farming and runs an orchard that produces a variety of fruits, including apples, peaches, and pears. His farm is known for its fresh and flavorful produce.</p>
+            <button class="shop-now" onclick="window.location.href='Shop.html'">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Farmer 4 -->
+    <div class="farmer-card">
+        <img src="https://img.freepik.com/premium-vector/indian-man-harvesting-rice-traditional-asian-agriculture_81894-9590.jpg?w=360" alt="Farmer 4">
+        <div class="farmer-description">
+            <h3>Susan Lee - Organic Herbs</h3>
+            <p>Susan's farm specializes in growing a wide range of organic herbs, including basil, oregano, rosemary, and mint. Her products are loved by chefs and home cooks alike for their freshness and aroma.</p>
+            <button class="shop-now" onclick="window.location.href='Shop.html'">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Farmer 5 -->
+    <div class="farmer-card">
+        <img src="https://img.freepik.com/premium-vector/man-indian-clothing-collects-sprouts-basket-vector-illustration_223337-15346.jpg?semt=ais_hybrid" alt="Farmer 5">
+        <div class="farmer-description">
+            <h3>Tom Green - Grain and Cereals</h3>
+            <p>Tom is a dedicated farmer who produces high-quality grains and cereals, including wheat, oats, and corn. His farm uses sustainable practices to ensure the best quality products with minimal environmental impact.</p>
+            <button class="shop-now" onclick="window.location.href='Shop.html'">Shop Now</button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

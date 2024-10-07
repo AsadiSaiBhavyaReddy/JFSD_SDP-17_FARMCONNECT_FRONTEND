@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN Page</title>
+    <style>
+        /* Styling for the entire page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://eu-images.contentstack.com/v3/assets/bltdd43779342bd9107/blt1645b96b020bdced/64380d5d8d2c523d0da7467d/543212762.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Header styling with blur effect */
+        header {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.5); /* Blurry background */
+            padding: 10px 0;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            backdrop-filter: blur(5px); /* Apply blur to background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for header */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #333;
+        }
+
+        /* Login form container */
+        .login-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            margin-top: 100px; /* Adjusted margin to fit under the header */
+        }
+
+        /* Styling for the button */
+        button {
+            background-color: green; /* Set the button color to green */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgreen; /* Darker green on hover */
+        }
+
+        /* Dropdown icon and menu styling */
+        .role-select-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .role-select-icon:hover {
+            background-color: lightgray;
+        }
+
+        /* Hidden dropdown list that appears on click */
+        .role-dropdown {
+            display: none;
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .role-dropdown select {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Farmer App</h1>
+    </header>
+
+    <!-- Login Form Section -->
+    <div class="login-container">
+        <h1>Enter the Credentials to Log In!</h1>
+        <br/>
+        Username: <input type="text" id="un"/><br/><br/>
+        Password: <input type="password" id="pw"/><br/><br/>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Role Selection Icon at the Bottom Right -->
+    <div class="role-select-icon" onclick="toggleDropdown()">
+        <img src="https://image.shutterstock.com/image-vector/user-icon-260nw-523867123.jpg" alt="Select Role" width="40" height="40"/> <!-- Placeholder image for the icon -->
+    </div>
+
+    <!-- Hidden Dropdown Menu -->
+    <div class="role-dropdown" id="roleDropdown">
+        <label for="role">Select Role:</label>
+        <select id="role">
+            <option value="admin">Admin Login</option>
+            <option value="instructor">AgriExperts Login</option>
+          
+        </select>
+    </div>
+
+    <script type="text/javascript">
+        function login() {
+            // Get input values
+            var username = document.getElementById('un').value;
+            var password = document.getElementById('pw').value;
+            var selectedRole = document.getElementById('role').value;
+
+            // Validate credentials
+            if (selectedRole === "admin") {
+                if (username === "admin" && password === "admin") {
+                    window.location.href = "adminlogin.html"; // Redirect to admin login page
+                } else {
+                    alert("Invalid credentials. Redirecting to home.");
+                    window.location.href = "home.html"; // Redirect to home.html on failed login
+                }
+            } else if (selectedRole === "instructor") {
+                if (username === "ram" && password === "123") {
+                    window.location.href = "reviewerlogin.html"; // Redirect to instructor review page
+                } else {
+                    alert("Invalid credentials. Redirecting to home.");
+                    window.location.href = "home.html"; // Redirect to home.html on failed login
+                }
+            
+            } else {
+                // Normal user login
+                if (username === "sai" && password === "123") {
+                    alert("Login Successful. Redirecting to home.");
+                    window.location.href = "home.html"; // Redirect for normal user
+                } else {
+                    alert("Invalid credentials. Redirecting to home.");
+                    window.location.href = "home.html"; // Redirect to home.html on failed login
+                }
+            }
+        }
+
+        /* Function to toggle the visibility of the dropdown */
+        function toggleDropdown() {
+            var dropdown = document.getElementById('roleDropdown');
+            if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                dropdown.style.display = "block";
+            } else {
+                dropdown.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

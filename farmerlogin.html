@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Management</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styling */
+        header {
+            background-color: green; /* Green background for header */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 200px;
+            background-color: #f8f8f8; /* Light background for sidebar */
+            height: 100vh; /* Full height of the viewport */
+            position: fixed; /* Fixed position on the left */
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Sidebar links styling */
+        .sidebar a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333; /* Dark color for text */
+            display: block; /* Make links block elements */
+            transition: background 0.3s; /* Smooth background transition */
+        }
+
+        /* Change background on hover */
+        .sidebar a:hover {
+            background-color: #ddd; /* Light gray on hover */
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-left: 220px; /* Leave space for sidebar */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        Agricultural Expert Management System
+    </header>
+
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <a href="#view-users">View Farmers</a>
+        <a href="#view-reviews">View Suggestions</a>
+        <a href="#add-reviews">Add Farmers</a>
+        <a href="#update-reviews">Update Farmers</a>
+        <a href="#delete-reviews">Delete Farmers</a>
+        <a href="#delete-users">Delete Farmers</a>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h2>Welcome to the Agricultural Expert Management System</h2>
+        <p>Select an option from the sidebar to manage users and reviews.</p>
+    </div>
+
+</body>
+</html>
