@@ -203,13 +203,12 @@
 </header>
 
 <nav>
-    
     <a href="home.html">Home</a>
-  <a href="Shop.html">Shop</a>
-  <a href="Showfarmer.html">Shop Farmer</a>
-  <a href="Review.html">Review the Products</a>
-  <a href="schem.html">Schemes</a>
-  </nav>
+    <a href="Shop.html">Shop</a>
+    <a href="Showfarmer.html">Shop Farmer</a>
+    <a href="Review.html">Review the Products</a>
+    <a href="schem.html">Schemes</a>
+</nav>
 
 <!-- Search Bar -->
 <div class="search-container">
@@ -251,53 +250,50 @@
             <button onclick="addToCart('Cauliflower', 50)">Add to Cart</button>
             <button onclick="viewDetails('Cauliflower')">View Details</button>
         </div>
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnXZK_TzE6ijSNBhfTVJYxZcQOK6hlquQgcHqnHGAB7iDOMTN27WotwFKUfbNd91tVZ_Y&usqp=CAU" alt="Cauliflower">
-            <h3>Ladies Finger </h3>
+        <div class="card" data-name="Ladies Finger" data-price="40">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnXZK_TzE6ijSNBhfTVJYxZcQOK6hlquQgcHqnHGAB7iDOMTN27WotwFKUfbNd91tVZ_Y&usqp=CAU" alt="Ladies Finger">
+            <h3>Ladies Finger</h3>
             <p>Price: 40/-</p>
-            <button onclick="addToCart('Ladies Finger')">Add to Cart</button>
+            <button onclick="addToCart('Ladies Finger', 40)">Add to Cart</button>
             <button onclick="viewDetails('Ladies Finger')">View Details</button>
         </div>
-    
-        <div class="card">
-            <img src="https://media.istockphoto.com/id/1208631571/photo/fresh-ripe-tomatoes-packaged-in-carton-box-on-street-market-or-greengrocery.jpg?s=612x612&w=0&k=20&c=jk1nsRiNtVn3YBvrymMKKW4vLSsTrSMQK_XR-ULBops=" alt="Cauliflower">
-            <h3>Tomatoes </h3>
+        <div class="card" data-name="Tomatoes" data-price="50">
+            <img src="https://media.istockphoto.com/id/1208631571/photo/fresh-ripe-tomatoes-packaged-in-carton-box-on-street-market-or-greengrocery.jpg?s=612x612&w=0&k=20&c=jk1nsRiNtVn3YBvrymMKKW4vLSsTrSMQK_XR-ULBops=" alt="Tomatoes">
+            <h3>Tomatoes</h3>
             <p>Price: 50/-</p>
-            <button onclick="addToCart('Tomatoes')">Add to Cart</button>
+            <button onclick="addToCart('Tomatoes', 50)">Add to Cart</button>
             <button onclick="viewDetails('Tomatoes')">View Details</button>
-        </div>
-    
-        <div class="card">
-            <img src="https://5.imimg.com/data5/UE/EV/MY-11629088/vegetable-green-peas-250x250.jpg" alt="Cauliflower">
-            <h3> Green Peas </h3>
-            <p>Price: 30/-</p>
-            <button onclick="addToCart('Green Peas')">Add to Cart</button>
-            <button onclick="viewDetails('Green Peas')">View Details</button>
         </div>
     </div>
 </div>
 
 <script>
-    // Add product to cart and store in localStorage
     function addToCart(productName, productPrice) {
         var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        cartItems.push({name: productName, price: productPrice});
+        cartItems.push({ name: productName, price: productPrice });
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
         alert(productName + ' has been added to the cart!');
+        
+        // Redirect to cart page
+        window.location.href = 'cart.html';
     }
 
-    // Search functionality (optional, based on your needs)
     function searchProduct() {
-        var input = document.getElementById('search-input').value.toLowerCase();
-        var products = document.querySelectorAll('.card');
-        products.forEach(function(product) {
-            var productName = product.dataset.name.toLowerCase();
-            if (productName.includes(input)) {
-                product.style.display = 'block';
+        const searchInput = document.getElementById('search-input').value.toLowerCase();
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach(card => {
+            const productName = card.getAttribute('data-name').toLowerCase();
+            if (productName.includes(searchInput)) {
+                card.style.display = 'block';
             } else {
-                product.style.display = 'none';
+                card.style.display = 'none';
             }
         });
+    }
+
+    function viewDetails(productName) {
+        alert('Viewing details for ' + productName);
     }
 </script>
 
